@@ -1,0 +1,26 @@
+.Container{
+    position: relative;
+    transition: all .7s ease;
+    width: 80%;
+    left: 15%;
+    background-color: var(--Light-Gray);
+    border-radius: .4em;
+    padding: 1em;
+    overflow: auto;
+    top: 15%;
+    height: 80%;
+    -webkit-transition: all .7s ease;
+    -moz-transition: all .7s ease;
+    -ms-transition: all .7s ease;
+    -o-transition: all .7s ease;
+    -webkit-border-radius: .4em;
+    -moz-border-radius: .4em;
+    -ms-border-radius: .4em;
+    -o-border-radius: .4em;
+}
+
+.SideBar:hover + .Container{
+    width: 75%;
+    left: 20%;
+
+}

@@ -1,0 +1,79 @@
+.AjouterSociete{
+    position: absolute;
+    width: 90%;
+    height: 60%;
+    top: 40%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -moz-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translateX(-50%);
+    -o-transform: translateY(-50%) translateX(-50%);
+}
+
+#AjouterSociete-zone{
+    width: 15%;
+    text-align: center;
+    padding-left: 0em;
+}
+
+.AjouterSociete-Line{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+
+.AjouterSociete-Line > input{
+    width: 25%;
+}
+
+.AjouterSociete-Line input,.AjouterSociete-Line > textarea{
+    margin-right: 2%;
+    height: 2.7em;
+    font-size: 1.2em;
+    border: 2px solid var(--Gray);
+    padding-left: .7em;
+    border-radius: .4em;
+    -webkit-border-radius: .4em;
+    -moz-border-radius: .4em;
+    -ms-border-radius: .4em;
+    -o-border-radius: .4em;
+}
+.AjouterSociete-Line div{
+    width: 40%;
+
+}
+.AjouterSociete-Line > textarea{
+    width: 40%;
+    height: 6.4em;
+}
+.AjouterSociete-Button{
+    height: 2.7em;
+    width: 15%;
+    font-family: 'Inter-Bold';
+    transition: all .2s ease;
+    font-size: 1.2em;
+    border: 2px solid var(--Green);
+    background-color: var(--Green);
+    color: var(--White);
+    padding-left: .7em;
+    border-radius: .4em;
+    -webkit-border-radius: .4em;
+    -moz-border-radius: .4em;
+    -ms-border-radius: .4em;
+    -o-border-radius: .4em;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+}
+
+.AjouterSociete-Button:hover{
+    background-color: var(--White);
+    color: var(--Green);
+
+}
+
+.AjouterSociete-Line:last-child{
+    justify-content: center;
+}

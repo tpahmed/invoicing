@@ -1,0 +1,108 @@
+.ListerSociete{
+    width: 100%;
+    height: 100%;
+    /* padding-top: 1em; */
+}
+
+.ListerSociete-Options{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.ListerSociete-Options > input {
+    height: 70%;
+    width: 20%;
+    margin-right: 2%;
+    border: 2px solid var(--Gray);
+    padding-left: .7em;
+    border-radius: .4em;
+    -webkit-border-radius: .4em;
+    -moz-border-radius: .4em;
+    -ms-border-radius: .4em;
+    -o-border-radius: .4em;
+}
+
+.ListerSociete-Options > input:focus {
+    outline: 0;
+}
+
+.ListerSociete-Options > img {
+    height: 2.5em;
+    margin-right: 2%;
+    cursor: pointer;
+}
+
+.ListerSociete-List{
+    position: relative;
+    width: 100%;
+    height: 90%;
+    border: 2px solid var(--White);
+    overflow-y: scroll;
+    border-radius: .4em;
+    -webkit-border-radius: .4em;
+    -moz-border-radius: .4em;
+    -ms-border-radius: .4em;
+    -o-border-radius: .4em;
+}
+
+
+.ListerSociete-table{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    /* background-color: var(--White); */
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.ListerSociete-table tbody{
+    overflow: scroll;
+    height: 80px;
+}
+.ListerSociete-table thead{
+    color: var(--Green);
+    position: sticky;
+    width: 100%;
+    top: 0;
+}
+
+.ListerSociete-table thead tr{
+    background-color: var(--White);
+    border-radius: .4em .4em 0 0;
+    -webkit-border-radius: .4em .4em 0 0;
+    -moz-border-radius: .4em .4em 0 0;
+    -ms-border-radius: .4em .4em 0 0;
+    -o-border-radius: .4em .4em 0 0;
+}
+
+
+
+.ListerSociete-table tbody{
+    background-color: var(--Light-Gray);
+}
+
+.ListerSociete-table td, .ListerSociete-table th {
+    border-left: 2px solid var(--White);
+    border-right: 2px solid var(--White);
+    border-bottom: 1px solid var(--White);
+}
+
+.ListerSociete-table td:first-child, .ListerSociete-table th:first-child {
+    border-left: none;
+    
+}
+
+.ListerSociete-table td:last-child, .ListerSociete-table th:last-child  {
+    border-right: none;
+}
+.ListerSociete-table th{
+    font-family: 'Inter-Bold';
+}
+
+.ListerSociete-table tr{
+    height: 2.5em;
+}

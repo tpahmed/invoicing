@@ -1,0 +1,108 @@
+.ListerClient{
+    width: 100%;
+    height: 100%;
+    /* padding-top: 1em; */
+}
+
+.ListerClient-Options{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.ListerClient-Options > input {
+    height: 70%;
+    width: 20%;
+    margin-right: 2%;
+    border: 2px solid var(--Gray);
+    padding-left: .7em;
+    border-radius: .4em;
+    -webkit-border-radius: .4em;
+    -moz-border-radius: .4em;
+    -ms-border-radius: .4em;
+    -o-border-radius: .4em;
+}
+
+.ListerClient-Options > input:focus {
+    outline: 0;
+}
+
+.ListerClient-Options > img {
+    height: 2.5em;
+    margin-right: 2%;
+    cursor: pointer;
+}
+
+.ListerClient-List{
+    position: relative;
+    width: 100%;
+    height: 90%;
+    border: 2px solid var(--White);
+    overflow-y: scroll;
+    border-radius: .4em;
+    -webkit-border-radius: .4em;
+    -moz-border-radius: .4em;
+    -ms-border-radius: .4em;
+    -o-border-radius: .4em;
+}
+
+
+.ListerClient-table{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    /* background-color: var(--White); */
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.ListerClient-table tbody{
+    overflow: scroll;
+    height: 80px;
+}
+.ListerClient-table thead{
+    color: var(--Green);
+    position: sticky;
+    width: 100%;
+    top: 0;
+}
+
+.ListerClient-table thead tr{
+    background-color: var(--White);
+    border-radius: .4em .4em 0 0;
+    -webkit-border-radius: .4em .4em 0 0;
+    -moz-border-radius: .4em .4em 0 0;
+    -ms-border-radius: .4em .4em 0 0;
+    -o-border-radius: .4em .4em 0 0;
+}
+
+
+
+.ListerClient-table tbody{
+    background-color: var(--Light-Gray);
+}
+
+.ListerClient-table td, .ListerClient-table th {
+    border-left: 2px solid var(--White);
+    border-right: 2px solid var(--White);
+    border-bottom: 1px solid var(--White);
+}
+
+.ListerClient-table td:first-child, .ListerClient-table th:first-child {
+    border-left: none;
+    
+}
+
+.ListerClient-table td:last-child, .ListerClient-table th:last-child  {
+    border-right: none;
+}
+.ListerClient-table th{
+    font-family: 'Inter-Bold';
+}
+
+.ListerClient-table tr{
+    height: 2.5em;
+}

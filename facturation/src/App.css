@@ -1,0 +1,50 @@
+:root{
+  --Green : #2ad19d;
+  --Gray : #777777;
+  --Lighter-Gray: #f6f6f6;
+  --Light-Gray: #dcdcdc;
+  --White : #fff;
+  --Black : #111;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter.ttf');
+}
+@font-face {
+  font-family: 'Inter-Bold';
+  src: url('./fonts/Inter-Bold.ttf');
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Inter';
+}
+body{
+  width: 100%;
+  height: 100vh;
+  background-color: var(--White);
+}
+
+#root, .App{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+::-webkit-scrollbar{
+  background-color: var(--White);
+  height: .7em;
+  width: .7em;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: var(--Green);
+  border-radius: .4em;
+  -webkit-border-radius: .4em;
+  -moz-border-radius: .4em;
+  -ms-border-radius: .4em;
+  -o-border-radius: .4em;
+}

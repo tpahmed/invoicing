@@ -1,0 +1,151 @@
+.SideBar{
+    position: fixed;
+    left: 1%;
+    border-right: 3px solid var(--Light-Gray);
+    background-color: var(--White);
+    height: 70%;
+    width: 4em;
+    overflow: hidden;
+    transition: all .7s ease;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    justify-content: space-evenly;
+    color: var(--Black);
+    top: 50%;
+    z-index: 2;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -webkit-transition: all .7s ease;
+    -moz-transition: all .7s ease;
+    -ms-transition: all .7s ease;
+    -o-transition: all .7s ease;
+}
+.SideBar:hover{
+    width: 13em;
+}
+
+.SideBar-Option-Selected{
+    color: var(--Green);
+}
+
+.SideBar-Option-Selected  .SideBar-Button > img{
+    filter: invert(58%) sepia(97%) saturate(313%) hue-rotate(110deg) brightness(96%) contrast(97%);
+}
+
+.SideBar-Option{
+
+    width: 12em;
+}
+
+.SideBar-Button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+}
+.SideBar-Option:hover{
+    color: var(--White);
+    background-color: var(--Green);
+    border-radius: .4em;
+    -webkit-border-radius: .4em;
+    -moz-border-radius: .4em;
+    -ms-border-radius: .4em;
+    -o-border-radius: .4em;
+}
+
+
+.SideBar-Button  img{
+    transition: all .3s ease;
+    width: 50px;
+    margin-right: 1em;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+}
+.SideBar-Option:hover .SideBar-Button > img{
+    filter: invert(100%) sepia(0%) saturate(1296%) hue-rotate(150deg) brightness(102%) contrast(102%);
+}
+.SideBar-Option  span{
+    font-family: 'Inter-Bold';
+    font-size: larger;
+}
+
+.SideBar-Option:hover .SideBar-SubPage{
+    height: 10em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.SideBar-SubPage{
+    width: 90%;
+    margin-left: 5%;
+    height: 0;
+    overflow: hidden;
+    font-size: .6em;
+    display: flex;
+    transition: all .3s ease;
+    flex-direction: column;
+    border-radius: .4em;
+    background-color: var(--White);
+    color: var(--Black);
+    -webkit-border-radius: .4em;
+    -moz-border-radius: .4em;
+    -ms-border-radius: .4em;
+    -o-border-radius: .4em;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+}
+.SideBar-SubPage img{
+    width: 30px;
+}
+.SideBar-SubPage-Option{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all .3s ease;
+    padding: .6em;
+    margin: .3em;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+}
+
+.SideBar-SubPage-Option:hover{
+    background-color: var(--Green);
+    border-radius: .4em;
+    color: var(--White);
+    -webkit-border-radius: .4em;
+    -moz-border-radius: .4em;
+    -ms-border-radius: .4em;
+    -o-border-radius: .4em;
+}
+
+.SideBar-SubPage-Option:hover  img{
+    filter: invert(100%) sepia(0%) saturate(1296%) hue-rotate(150deg) brightness(102%) contrast(102%);
+}
+
+.SideBar-SubPage-Option-Selected{
+    background-color: var(--Green);
+    border-radius: .4em;
+    color: var(--White);
+    -webkit-border-radius: .4em;
+    -moz-border-radius: .4em;
+    -ms-border-radius: .4em;
+    -o-border-radius: .4em;
+}
+
+.SideBar-SubPage-Option-Selected  img{
+    filter: invert(100%) sepia(0%) saturate(1296%) hue-rotate(150deg) brightness(102%) contrast(102%);
+}
