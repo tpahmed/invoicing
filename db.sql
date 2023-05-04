@@ -38,7 +38,7 @@ create table Produit(
 create table Invoice(
     no_inv varchar(50) primary key,
     Date_inv date,
-    onvoiceTo int references Client(id_client),
+    invoiceTo int references Client(id_client),
     payTo int references Societe(id_societe),
     Note text,
     Taxes float,

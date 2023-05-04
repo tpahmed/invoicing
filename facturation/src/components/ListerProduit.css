@@ -119,3 +119,10 @@
     -ms-border-radius: .4em;
     -o-border-radius: .4em;
 }
+
+
+@media screen and (max-width:766px) {
+    .ListerProduit-Options > input {
+        width: 50%;
+    }
+}

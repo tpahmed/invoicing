@@ -1,10 +1,10 @@
-.GereCategorie{
+.GereFacture{
     width: 100%;
     height: 100%;
     /* padding-top: 1em; */
 }
 
-.GereCategorie-Options{
+.GereFacture-Options{
     width: 100%;
     height: 10%;
     display: flex;
@@ -13,13 +13,13 @@
     margin-bottom: .5em;
 }
 
-.GereCategorie-Options > div{
+.GereFacture-Options > div{
     width: 80%;
     height: 100%;
     display: flex;
     align-items: center;
 }
-.GereCategorie-Options span{
+.GereFacture-Options span{
     width: 20%;
     height: 100%;
     display: flex;
@@ -28,7 +28,7 @@
     font-family: 'Inter-Bold';
 }
 
-.GereCategorie-CheckBox{
+.GereFacture-CheckBox{
     width: 2em;
     height: 2em;
     user-select: none;
@@ -41,7 +41,7 @@
     -ms-border-radius: .4em;
     -o-border-radius: .4em;
 }
-.GereCategorie-CheckBox-check{
+.GereFacture-CheckBox-check{
     position: relative;
     top: 50%;
     left: 50%;
@@ -65,7 +65,7 @@
     -o-transition: all .1s ease;
 }
 
-.GereCategorie-Button{
+.GereFacture-Button{
     height: 2.7em;
     width: 20%;
     font-family: 'Inter-Bold';
@@ -89,7 +89,7 @@
 }
 
 
-.GereCategorie-Options input {
+.GereFacture-Options input {
     height: 70%;
     width: 40%;
     margin-right: 2%;
@@ -102,17 +102,17 @@
     -o-border-radius: .4em;
 }
 
-.GereCategorie-Options input:focus {
+.GereFacture-Options input:focus {
     outline: 0;
 }
 
-.GereCategorie-Options img {
+.GereFacture-Options img {
     height: 2.5em;
     margin-right: 2%;
     cursor: pointer;
 }
 
-.GereCategorie-List{
+.GereFacture-List{
     position: relative;
     width: 100%;
     height: 90%;
@@ -126,7 +126,7 @@
 }
 
 
-.GereCategorie-table{
+.GereFacture-table{
     position: absolute;
     width: 100%;
     height: 80%;
@@ -135,18 +135,18 @@
     border-collapse: collapse;
 }
 
-.GereCategorie-table tbody{
+.GereFacture-table tbody{
     overflow: scroll;
     height: 80px;
 }
-.GereCategorie-table thead{
+.GereFacture-table thead{
     color: var(--Green);
     position: sticky;
     width: 100%;
     top: 0;
 }
 
-.GereCategorie-table thead tr{
+.GereFacture-table thead tr{
     background-color: var(--White);
     border-radius: .4em .4em 0 0;
     -webkit-border-radius: .4em .4em 0 0;
@@ -157,33 +157,34 @@
 
 
 
-.GereCategorie-table tbody{
+.GereFacture-table tbody{
     background-color: var(--Light-Gray);
 }
 
-.GereCategorie-table td, .GereCategorie-table th {
+.GereFacture-table td, .GereFacture-table th {
     border-left: 2px solid var(--White);
     border-right: 2px solid var(--White);
     border-bottom: 1px solid var(--White);
+    max-width: 10em;
 }
 
-.GereCategorie-table td:first-child, .GereCategorie-table th:first-child {
+.GereFacture-table td:first-child, .GereFacture-table th:first-child {
     border-left: none;
     
 }
 
-.GereCategorie-table td:last-child, .GereCategorie-table th:last-child  {
+.GereFacture-table td:last-child, .GereFacture-table th:last-child  {
     border-right: none;
 }
-.GereCategorie-table th{
+.GereFacture-table th{
     font-family: 'Inter-Bold';
 }
 
-.GereCategorie-table tr{
+.GereFacture-table tr{
     height: 2.5em;
 }
 
-.GereCategorie-table button{
+.GereFacture-table button{
     user-select: none;
     background-color: var(--White);
     border: 2px solid var(--Green);
@@ -194,30 +195,32 @@
     -ms-border-radius: .4em;
     -o-border-radius: .4em;
 }
+.GereFacture-table button > img{
+    filter: invert(58%) sepia(97%) saturate(313%) hue-rotate(110deg) brightness(96%) contrast(97%);
+    -webkit-filter: invert(58%) sepia(97%) saturate(313%) hue-rotate(110deg) brightness(96%) contrast(97%);
+}
 
-.GereCategorie-Button:hover{
+.GereFacture-Button:hover{
     background-color: var(--White);
     color: var(--Green);
 
 }
 
 @media screen and (max-width:1115px) {
-    .GereCategorie-Options span{
+    .GereFacture-Options span{
         width: 30%;
         font-size: 1em;
     }
-    .GereCategorie-Options button{
+    .GereFacture-Options button{
         width: 30%;
     }
 }
-
-
 @media screen and (max-width:661px) {
-    .GereCategorie-Options{
+    .GereFacture-Options{
         flex-direction: column;
         height: 7em;
     }
-    .GereCategorie-List{
+    .GereFacture-List{
         margin-top: 3em;
     }
 }

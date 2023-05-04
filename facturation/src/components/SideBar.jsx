@@ -19,6 +19,7 @@ export default function SideBar() {
   const Location = useLocation();
   const Navigator = useNavigate();
   const {Toggle,SetToggle} = useContext(SideBar_Context);
+  window.addEventListener('resize',()=>SetToggle(false));
   return (
     <div className="SideBar" style={Toggle ? { left: "50%"} : null}>
       <button className='SideBar-Quitter' onClick={()=>SetToggle(false)}>

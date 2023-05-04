@@ -29,7 +29,7 @@ Produit :
 Invoice :
 	no_inv
 	Date_inv
-	onvoiceTo
+	invoiceTo
 	payTo
 	Note
 	Taxes

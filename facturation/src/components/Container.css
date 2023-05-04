@@ -1,5 +1,5 @@
 .Container{
-    position: relative;
+    position: fixed;
     transition: all .7s ease;
     width: 85%;
     left: 10%;

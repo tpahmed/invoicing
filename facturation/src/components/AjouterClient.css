@@ -12,7 +12,7 @@
 }
 
 #AjouterClient-zone{
-    width: 15%;
+    width: 4em;
     text-align: center;
     padding-left: 0em;
 }
@@ -49,7 +49,7 @@
 }
 .AjouterClient-Button{
     height: 2.7em;
-    width: 15%;
+    width: 10em;
     font-family: 'Inter-Bold';
     transition: all .2s ease;
     font-size: 1.2em;
@@ -77,4 +77,19 @@
 
 .AjouterClient-Line:last-child{
     justify-content: center;
+}
+
+
+@media screen and (max-width:766px) {
+    .AjouterClient-Line{
+        flex-direction: column;
+        align-items: center;
+    }
+    .AjouterClient-Line > div{
+        width: 100%;
+        margin: 1em;
+    }
+    .AjouterClient-Line > input,.AjouterClient-Line > textarea{
+        width: 100%;
+    }
 }

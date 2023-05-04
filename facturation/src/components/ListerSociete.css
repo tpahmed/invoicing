@@ -106,3 +106,9 @@
 .ListerSociete-table tr{
     height: 2.5em;
 }
+
+@media screen and (max-width:766px) {
+    .ListerSociete-Options > input {
+        width: 50%;
+    }
+}

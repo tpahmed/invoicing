@@ -39,8 +39,20 @@
     -o-transition: all .2s ease;
 }
 
+.NavBack-Back{
+    position: absolute;
+    cursor: pointer;
+    left: 20%;
+    top: -.5%;
+}
+
 @media screen and (max-width:1115px) {
     .NavBar button{
         visibility: visible;
+    }
+}
+@media print {
+    .NavBack-Back{
+        display: none;
     }
 }

@@ -39,13 +39,27 @@ App.get('/societe',(req,res)=>{
                 ,(err,result)=>{
         if(err){
             res.json({success:false,data:err})
+            return
         }
         res.json({success:true,data:result})
     })
 });
 
+App.get('/societe/:id',(req,res)=>{
+    conx.query(`SELECT * 
+                FROM Societe 
+                where id_societe = ?`,
+                [req.params.id]
+                ,(err,result)=>{
+        if(err){
+            res.json({success:false,data:err})
+            return
+        }
+        res.json({success:true,data:result[0]})
+    })
+});
+
 App.post('/societe',(req,res)=>{
-    console.log(req)
     conx.query('INSERT INTO societe VALUES (NULL,?,?,?,?,?)',[
         req.body.Raison_S,
         req.body.Adresse,
@@ -54,7 +68,8 @@ App.post('/societe',(req,res)=>{
         req.body.Patente
     ],(err,result)=>{
         if(err){
-            res.json({success:false,data:err});
+            res.json({success:false,data:err})
+            return;
         }
         res.json({success:true,data:result});
     })
@@ -64,8 +79,19 @@ App.get('/client',(req,res)=>{
     conx.query('Select * from client;',(err,result)=>{
         if(err){
             res.json({success:false,data:err})
+            return
         }
         res.json({success:true,data:result})
+    })
+});
+
+App.get('/client/:id',(req,res)=>{
+    conx.query('Select * from client where id_client = ?;',[req.params.id],(err,result)=>{
+        if(err){
+            res.json({success:false,data:err})
+            return
+        }
+        res.json({success:true,data:result[0]})
     })
 });
 
@@ -79,6 +105,7 @@ App.post('/client',(req,res)=>{
     ],(err,result)=>{
         if(err){
             res.json({success:false,data:err})
+            return
         }
         res.json({success:true,data:result})
     })
@@ -94,6 +121,7 @@ App.get('/cat',(req,res)=>{
     `,(err,result)=>{
         if(err){
             res.json({success:false,data:err})
+            return
         }
         res.json({success:true,data:result})
     })
@@ -107,6 +135,7 @@ App.get('/cat/:id',(req,res)=>{
     `,[req.params.id],(err,result)=>{
         if(err){
             res.json({success:false,data:err})
+            return
         }
         res.json({success:true,data:result})
     })
@@ -119,6 +148,7 @@ App.post('/cat',(req,res)=>{
     ],(err,result)=>{
         if(err){
             res.json({success:false,data:err})
+            return
         }
         res.json({success:true,data:result})
     })
@@ -130,6 +160,7 @@ App.delete('/cat',(req,res)=>{
     ],(err,result)=>{
         if(err){
             res.json({success:false,data:err})
+            return
         }
         res.json({success:true,data:result})
     })
@@ -144,6 +175,7 @@ App.get('/produit',(req,res)=>{
     `,(err,result)=>{
         if(err){
             res.json({success:false,data:err})
+            return
         }
         res.json({success:true,data:result})
     })
@@ -157,6 +189,7 @@ App.get('/produit/:id',(req,res)=>{
     `,[req.params.id],(err,result)=>{
         if(err){
             res.json({success:false,data:err})
+            return
         }
         res.json({success:true,data:result})
     })
@@ -179,6 +212,7 @@ App.post('/produit/:id',(req,res)=>{
     ],(err,result)=>{
         if(err){
             res.json({success:false,data:err})
+            return
         }
         res.json({success:true,data:result})
     })
@@ -193,6 +227,7 @@ App.post('/produit',(req,res)=>{
     ],(err,result)=>{
         if(err){
             res.json({success:false,data:err})
+            return
         }
         res.json({success:true,data:result})
     })
@@ -204,6 +239,69 @@ App.delete('/produit',(req,res)=>{
     ],(err,result)=>{
         if(err){
             res.json({success:false,data:err})
+            return
+        }
+        res.json({success:true,data:result})
+    })
+});
+
+App.get('/facture',(req,res)=>{
+    conx.query(`
+    SELECT *
+    FROM invoice;
+    `,[],(err,result)=>{
+        if(err || !result[0]){
+            res.json({success:false,data:err})
+            return
+            
+        }
+        res.json({success:true,data:result})
+    })
+});
+
+App.get('/facture/s/:id',(req,res)=>{
+    conx.query(`
+    SELECT *
+    FROM invoice
+    Where no_inv = ?;
+    `,[req.params.id],(err,result)=>{
+        if(err || !result[0]){
+            res.json({success:false,data:err})
+            return
+            
+        }
+        res.json({success:true,data:result[0]})
+    })
+});
+
+App.get('/facture/command/:id',(req,res)=>{
+    conx.query(`
+    SELECT InvoiceProducts.*, Produit.Price AS product_price , Produit.Description AS product_description, Categorie.Titre AS categorie_title
+    FROM Invoice
+    JOIN InvoiceProducts ON Invoice.no_inv = InvoiceProducts.no_inv
+    JOIN Produit ON InvoiceProducts.id_produit = Produit.id_produit
+    JOIN Categorie ON Produit.id_categorie = Categorie.id_categorie
+    Where InvoiceProducts.no_inv = ?;
+    `,[req.params.id],(err,result)=>{
+        if(err || !result[0]){
+            res.json({success:false,data:err})
+            return
+            
+        }
+        res.json({success:true,data:result})
+    })
+});
+
+App.post('/facture/:id',(req,res)=>{
+    conx.query(`
+    Update invoice
+    set Payed = 1
+    Where no_inv = ?;
+    `,[req.params.id],(err,result)=>{
+        if(err){
+            res.json({success:false,data:err})
+            return
+            
         }
         res.json({success:true,data:result})
     })
@@ -215,12 +313,14 @@ App.get('/facture/num',(req,res)=>{
     FROM invoice
     Where year(Date_inv) = ?;
     `,[new Date().getFullYear()],(err,result)=>{
-        if(err){
+        if(err !== null){
             res.json({success:false,data:err})
+            return
         }
         res.json({success:true,data:result[0]})
     })
 });
+
 App.post('/facture',(req,res)=>{
     conx.query(`INSERT INTO Invoice VALUES (?,?,?,?,?,?,?,?)`,[
         req.body.no_fac,
@@ -234,18 +334,14 @@ App.post('/facture',(req,res)=>{
     ],async (err,result)=>{
         if(err){
             res.json({success:false,data:err})
+            return
         }
         for (let e in req.body.ProduitsCommander){
             conx.query(`INSERT INTO Invoiceproducts VALUES (Null,?,?,?)`,[
                 req.body.ProduitsCommander[e].id_produit,
                 req.body.ProduitsCommander[e].no_inv,
                 req.body.ProduitsCommander[e].Qte
-            ],(err,result)=>{
-                if(err){
-                    console.log(err)
-                }
-                console.log(result)
-            })
+            ])
         }
         res.json({success:true,data:result})
     })

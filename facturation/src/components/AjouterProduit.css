@@ -44,7 +44,7 @@
 }
 .AjouterProduit-Button{
     height: 2.7em;
-    width: 15%;
+    width: 10em;
     font-family: 'Inter-Bold';
     transition: all .2s ease;
     font-size: 1.2em;
@@ -72,4 +72,11 @@
 
 .AjouterProduit-Line:last-child{
     justify-content: center;
+}
+
+
+@media screen and (max-width:766px) {
+    .AjouterProduit-Line > input{
+        width: 45%;
+    }
 }
