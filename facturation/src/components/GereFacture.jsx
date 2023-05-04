@@ -21,7 +21,6 @@ export default function GereFacture() {
 
   async function Update(){
     const response = await axios.get('//localhost:4444/facture');
-    console.log(response.data.data)
     setFactures(response.data.data);
   }
   useEffect(()=>{

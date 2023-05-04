@@ -249,8 +249,8 @@ App.get('/facture',(req,res)=>{
     conx.query(`
     SELECT *
     FROM invoice;
-    `,[],(err,result)=>{
-        if(err || !result[0]){
+    `,(err,result)=>{
+        if(err){
             res.json({success:false,data:err})
             return
             
