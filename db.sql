@@ -23,20 +23,17 @@ create table Client(
 create table Categorie(
     id_categorie int auto_increment primary key,
     Titre varchar(20),
-    Servise boolean
+    Service boolean
 );
 
 create table Produit(
     id_produit int auto_increment primary key,
     Description varchar(50),
+    Stock bigint,
+    Price float,
     id_categorie int references Categorie(id_categorie)
 );
 
-create table Variant(
-    ref varchar(50) primary key,
-    Description varchar(50),
-    id_produit int references Produit(id_produit)
-);
 
 create table Invoice(
     no_inv varchar(50) primary key,
@@ -51,15 +48,7 @@ create table Invoice(
 
 create table InvoiceProducts(
     id_invoiceProducts int auto_increment primary key,
-    ref_var int references Variant(ref),
-    no_inv int references Invoice(no_inv),
-    Qty int
-);
-
-create table InvoiceServises(
-    id_invoiceServises int auto_increment primary key,
     id_produit int references Produit(id_produit),
     no_inv int references Invoice(no_inv),
     Qty int
 );
-

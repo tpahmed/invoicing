@@ -1,8 +1,8 @@
 .Container{
     position: relative;
     transition: all .7s ease;
-    width: 80%;
-    left: 15%;
+    width: 85%;
+    left: 10%;
     background-color: var(--Light-Gray);
     border-radius: .4em;
     padding: 1em;
@@ -19,8 +19,20 @@
     -o-border-radius: .4em;
 }
 
-.SideBar:hover + .Container{
-    width: 75%;
-    left: 20%;
 
+@media screen and (min-width:1115px) {
+    .SideBar:hover + .Container{
+        width: 80%;
+        left: 15%;
+    
+    }
+    
+}
+@media screen and (max-width:763px) {
+    .Container{
+        width: 100%;
+        left: 0;
+    
+    }
+    
 }

@@ -1,4 +1,4 @@
-.AjouterClient{
+.AjouterProduit{
     position: absolute;
     width: 90%;
     height: 60%;
@@ -11,23 +11,18 @@
     -o-transform: translateY(-50%) translateX(-50%);
 }
 
-#AjouterClient-zone{
-    width: 15%;
-    text-align: center;
-    padding-left: 0em;
-}
 
-.AjouterClient-Line{
+.AjouterProduit-Line{
     display: flex;
     justify-content: space-between;
     margin-top: 2em;
 }
 
-.AjouterClient-Line > input{
-    width: 25%;
+.AjouterProduit-Line > input{
+    width: 35%;
 }
 
-.AjouterClient-Line input,.AjouterClient-Line > textarea{
+.AjouterProduit-Line input,.AjouterProduit-Line > textarea,.AjouterProduit-Line select{
     margin-right: 2%;
     height: 2.7em;
     font-size: 1.2em;
@@ -39,15 +34,15 @@
     -ms-border-radius: .4em;
     -o-border-radius: .4em;
 }
-.AjouterClient-Line div{
+.AjouterProduit-Line div{
     width: 40%;
 
 }
-.AjouterClient-Line > textarea{
+.AjouterProduit-Line > textarea{
     width: 40%;
     height: 6.4em;
 }
-.AjouterClient-Button{
+.AjouterProduit-Button{
     height: 2.7em;
     width: 15%;
     font-family: 'Inter-Bold';
@@ -69,12 +64,12 @@
     -o-transition: all .2s ease;
 }
 
-.AjouterClient-Button:hover{
+.AjouterProduit-Button:hover{
     background-color: var(--White);
     color: var(--Green);
 
 }
 
-.AjouterClient-Line:last-child{
+.AjouterProduit-Line:last-child{
     justify-content: center;
 }

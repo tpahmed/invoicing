@@ -1,0 +1,212 @@
+.GereCategorie{
+    width: 100%;
+    height: 100%;
+    /* padding-top: 1em; */
+}
+
+.GereCategorie-Options{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .5em;
+}
+
+.GereCategorie-Options > div{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.GereCategorie-Options span{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.3em;
+    font-family: 'Inter-Bold';
+}
+
+.GereCategorie-CheckBox{
+    width: 2em;
+    height: 2em;
+    user-select: none;
+    background-color: var(--White);
+    border: 2px solid var(--Green);
+    cursor: pointer;
+    border-radius: .4em;
+    -webkit-border-radius: .4em;
+    -moz-border-radius: .4em;
+    -ms-border-radius: .4em;
+    -o-border-radius: .4em;
+}
+.GereCategorie-CheckBox-check{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    transition: all .1s ease;
+    background-color: var(--Green);
+    border-radius: .4em;
+    -webkit-border-radius: .4em;
+    -moz-border-radius: .4em;
+    -ms-border-radius: .4em;
+    -o-border-radius: .4em;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    -webkit-transition: all .1s ease;
+    -moz-transition: all .1s ease;
+    -ms-transition: all .1s ease;
+    -o-transition: all .1s ease;
+}
+
+.GereCategorie-Button{
+    height: 2.7em;
+    width: 20%;
+    font-family: 'Inter-Bold';
+    transition: all .2s ease;
+    font-size: 1.2em;
+    border: 2px solid var(--Green);
+    background-color: var(--Green);
+    color: var(--White);
+    margin-left: 1em;
+    padding-left: .7em;
+    padding-right: .7em;
+    border-radius: .4em;
+    -webkit-border-radius: .4em;
+    -moz-border-radius: .4em;
+    -ms-border-radius: .4em;
+    -o-border-radius: .4em;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+}
+
+
+.GereCategorie-Options input {
+    height: 70%;
+    width: 40%;
+    margin-right: 2%;
+    border: 2px solid var(--Gray);
+    padding-left: .7em;
+    border-radius: .4em;
+    -webkit-border-radius: .4em;
+    -moz-border-radius: .4em;
+    -ms-border-radius: .4em;
+    -o-border-radius: .4em;
+}
+
+.GereCategorie-Options input:focus {
+    outline: 0;
+}
+
+.GereCategorie-Options img {
+    height: 2.5em;
+    margin-right: 2%;
+    cursor: pointer;
+}
+
+.GereCategorie-List{
+    position: relative;
+    width: 100%;
+    height: 90%;
+    border: 2px solid var(--White);
+    overflow-y: scroll;
+    border-radius: .4em;
+    -webkit-border-radius: .4em;
+    -moz-border-radius: .4em;
+    -ms-border-radius: .4em;
+    -o-border-radius: .4em;
+}
+
+
+.GereCategorie-table{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    /* background-color: var(--White); */
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.GereCategorie-table tbody{
+    overflow: scroll;
+    height: 80px;
+}
+.GereCategorie-table thead{
+    color: var(--Green);
+    position: sticky;
+    width: 100%;
+    top: 0;
+}
+
+.GereCategorie-table thead tr{
+    background-color: var(--White);
+    border-radius: .4em .4em 0 0;
+    -webkit-border-radius: .4em .4em 0 0;
+    -moz-border-radius: .4em .4em 0 0;
+    -ms-border-radius: .4em .4em 0 0;
+    -o-border-radius: .4em .4em 0 0;
+}
+
+
+
+.GereCategorie-table tbody{
+    background-color: var(--Light-Gray);
+}
+
+.GereCategorie-table td, .GereCategorie-table th {
+    border-left: 2px solid var(--White);
+    border-right: 2px solid var(--White);
+    border-bottom: 1px solid var(--White);
+}
+
+.GereCategorie-table td:first-child, .GereCategorie-table th:first-child {
+    border-left: none;
+    
+}
+
+.GereCategorie-table td:last-child, .GereCategorie-table th:last-child  {
+    border-right: none;
+}
+.GereCategorie-table th{
+    font-family: 'Inter-Bold';
+}
+
+.GereCategorie-table tr{
+    height: 2.5em;
+}
+
+.GereCategorie-table button{
+    user-select: none;
+    background-color: var(--White);
+    border: 2px solid var(--Green);
+    cursor: pointer;
+    border-radius: .4em;
+    -webkit-border-radius: .4em;
+    -moz-border-radius: .4em;
+    -ms-border-radius: .4em;
+    -o-border-radius: .4em;
+}
+
+.GereCategorie-Button:hover{
+    background-color: var(--White);
+    color: var(--Green);
+
+}
+
+@media screen and (max-width:1115px) {
+    .GereCategorie-Options span{
+        width: 30%;
+        font-size: 1em;
+    }
+    .GereCategorie-Options button{
+        width: 30%;
+    }
+}

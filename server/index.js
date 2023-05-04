@@ -85,4 +85,128 @@ App.post('/client',(req,res)=>{
 });
 
 
+App.get('/cat',(req,res)=>{
+    conx.query(`
+    SELECT Categorie.*, COUNT(Produit.id_categorie) AS products_count 
+    FROM Categorie 
+    LEFT JOIN Produit ON Categorie.id_categorie = Produit.id_categorie 
+    GROUP BY Categorie.id_categorie;
+    `,(err,result)=>{
+        if(err){
+            res.json({success:false,data:err})
+        }
+        res.json({success:true,data:result})
+    })
+});
+
+App.get('/cat/:id',(req,res)=>{
+    conx.query(`
+    SELECT Titre
+    FROM Categorie
+    Where id_categorie = ?;
+    `,[req.params.id],(err,result)=>{
+        if(err){
+            res.json({success:false,data:err})
+        }
+        res.json({success:true,data:result})
+    })
+});
+
+App.post('/cat',(req,res)=>{
+    conx.query('INSERT INTO Categorie VALUES (NULL,?,?)',[
+        req.body.CategorieName,
+        req.body.service ? 1 : 0
+    ],(err,result)=>{
+        if(err){
+            res.json({success:false,data:err})
+        }
+        res.json({success:true,data:result})
+    })
+});
+
+App.delete('/cat',(req,res)=>{
+    conx.query('DELETE FROM `Categorie` WHERE id_categorie = ?',[
+        req.body.id
+    ],(err,result)=>{
+        if(err){
+            res.json({success:false,data:err})
+        }
+        res.json({success:true,data:result})
+    })
+});
+
+App.get('/produit',(req,res)=>{
+    conx.query(`
+    SELECT Produit.*, Categorie.Titre AS products_cat 
+    FROM Produit, Categorie
+    Where Categorie.id_categorie = Produit.id_categorie 
+    GROUP BY Produit.id_produit;
+    `,(err,result)=>{
+        if(err){
+            res.json({success:false,data:err})
+        }
+        res.json({success:true,data:result})
+    })
+});
+
+App.get('/produit/:id',(req,res)=>{
+    conx.query(`
+    SELECT *
+    FROM Produit
+    Where Produit.id_produit = ?;
+    `,[req.params.id],(err,result)=>{
+        if(err){
+            res.json({success:false,data:err})
+        }
+        res.json({success:true,data:result})
+    })
+});
+
+App.post('/produit/:id',(req,res)=>{
+    conx.query(`
+    Update Produit
+    set Description = ?,
+    Stock = ?,
+    Price = ?,
+    id_categorie = ?
+    Where Produit.id_produit = ?;
+    `,[
+        req.body.Description,
+        req.body.Stock,
+        req.body.Price,
+        req.body.id_categorie,
+        req.params.id
+    ],(err,result)=>{
+        if(err){
+            res.json({success:false,data:err})
+        }
+        res.json({success:true,data:result})
+    })
+});
+
+App.post('/produit',(req,res)=>{
+    conx.query('INSERT INTO Produit VALUES (NULL,?,?,?,?)',[
+        req.body.Description,
+        req.body.Stock,
+        req.body.Prix,
+        req.body.Categorie
+    ],(err,result)=>{
+        if(err){
+            res.json({success:false,data:err})
+        }
+        res.json({success:true,data:result})
+    })
+});
+
+App.delete('/produit',(req,res)=>{
+    conx.query('DELETE FROM `Produit` WHERE id_produit = ?',[
+        req.body.id
+    ],(err,result)=>{
+        if(err){
+            res.json({success:false,data:err})
+        }
+        res.json({success:true,data:result})
+    })
+});
+
 App.listen(4444);

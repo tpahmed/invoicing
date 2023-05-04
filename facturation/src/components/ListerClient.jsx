@@ -38,7 +38,6 @@ export default function ListerClient() {
             
                 {
                   Client.filter((e)=>{
-                    console.log(e)
                     for (let elem in e){
                       if(`${e[elem]}`.toUpperCase().includes(search.toUpperCase())){
                         return e;

@@ -17,20 +17,14 @@ Client :
 Categorie :
 	id_categorie
 	Titre
-	Servise
+	Service
 	
 Produit :
 	id_produit
 	Description
-	id_categorie
-
-	
-Variant :
-	ref
-	Color
-	Size
 	Stock
-	id_produit
+	Price
+	id_categorie
 
 Invoice :
 	no_inv
@@ -43,12 +37,6 @@ Invoice :
 	Payed
 
 InvoiceProducts :
-	id
-	ref_var
-	no_inv
-	Qty
-
-InvoiceServises :
 	id
 	id_produit
 	no_inv

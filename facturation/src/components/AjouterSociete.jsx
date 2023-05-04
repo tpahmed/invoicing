@@ -23,8 +23,8 @@ export default function AjouterSociete() {
         </div>
         <div className="AjouterSociete-Line">
             <div>
-                <input type='text' maxLength={"3"} value={Societe.telzone} onChange={(e)=>SetSociete({...Societe, telzone:e.target.value})} id='AjouterSociete-zone' placeholder='Zone'/>
-                <input type='text' maxLength={"9"} value={Societe.tel} onChange={(e)=>SetSociete({...Societe, tel:e.target.value})} placeholder='Telephone'/>
+                <input type='text' maxLength={"3"} value={Societe.telzone} onChange={(e)=>!isNaN(Number(e.target.value)) && e.target.value.length <= 3 ? SetSociete({...Societe, telzone:e.target.value}) : ''} id='AjouterSociete-zone' placeholder='Zone'/>
+                <input type='text' maxLength={"9"} value={Societe.tel} onChange={(e)=>!isNaN(Number(e.target.value)) && e.target.value.length < 10 ? SetSociete({...Societe, tel:e.target.value}) : ''} placeholder='Telephone'/>
             </div>
             <textarea placeholder='Adresse' value={Societe.Adresse} onChange={(e)=>SetSociete({...Societe, Adresse:e.target.value})}></textarea>
         </div>

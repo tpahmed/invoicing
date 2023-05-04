@@ -1,5 +1,6 @@
 :root{
   --Green : #2ad19d;
+  --Red : #E63A40;
   --Gray : #777777;
   --Lighter-Gray: #f6f6f6;
   --Light-Gray: #dcdcdc;
@@ -47,4 +48,8 @@ body{
   -moz-border-radius: .4em;
   -ms-border-radius: .4em;
   -o-border-radius: .4em;
+}
+
+td{
+  font-size: 1.2em;
 }

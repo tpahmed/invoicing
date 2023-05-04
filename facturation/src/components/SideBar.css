@@ -12,6 +12,7 @@
     user-select: none;
     justify-content: space-evenly;
     color: var(--Black);
+    border-radius: .4em;
     top: 50%;
     z-index: 2;
     transform: translateY(-50%);
@@ -23,6 +24,10 @@
     -moz-transition: all .7s ease;
     -ms-transition: all .7s ease;
     -o-transition: all .7s ease;
+    -webkit-border-radius: .4em;
+    -moz-border-radius: .4em;
+    -ms-border-radius: .4em;
+    -o-border-radius: .4em;
 }
 .SideBar:hover{
     width: 13em;
@@ -83,6 +88,10 @@
     height: 10em;
     margin-top: 1em;
     margin-bottom: 1em;
+}
+
+.SideBar-Option:hover .SideBar-SubPage-L{
+    height: 15em;
 }
 
 .SideBar-SubPage{
@@ -148,4 +157,25 @@
 
 .SideBar-SubPage-Option-Selected  img{
     filter: invert(100%) sepia(0%) saturate(1296%) hue-rotate(150deg) brightness(102%) contrast(102%);
+}
+
+@media screen and (max-width:1115px) {
+    .SideBar{
+        border-bottom: 3px solid var(--Light-Gray);
+    }
+    
+}
+
+
+@media screen and (max-width:763px) {
+    .SideBar{
+        width: 13em;
+        left: -50%;
+        border: 3px solid var(--Light-Gray);
+        transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -o-transform: translateX(-50%) translateY(-50%);
+    } 
 }

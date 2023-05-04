@@ -57,6 +57,7 @@
     background-color: var(--Green);
     color: var(--White);
     padding-left: .7em;
+    padding-right: .7em;
     border-radius: .4em;
     -webkit-border-radius: .4em;
     -moz-border-radius: .4em;

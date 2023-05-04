@@ -23,8 +23,8 @@ export default function AjouterClient() {
         </div>
         <div className="AjouterClient-Line">
             <div>
-                <input type='text' maxLength={"3"} value={Client.telzone} onChange={(e)=>SetClient({...Client, telzone:e.target.value})} id='AjouterClient-zone' placeholder='Zone'/>
-                <input type='text' maxLength={"9"} value={Client.tel} onChange={(e)=>SetClient({...Client, tel:e.target.value})} placeholder='Telephone'/>
+                <input type='text' maxLength={"3"} value={Client.telzone} onChange={(e)=>!isNaN(Number(e.target.value)) && e.target.value.length <= 3 ? SetClient({...Client, telzone:e.target.value}) : ''} id='AjouterClient-zone' placeholder='Zone'/>
+                <input type='text' maxLength={"9"} value={Client.tel} onChange={(e)=>!isNaN(Number(e.target.value)) && e.target.value.length < 10 ? SetClient({...Client, tel:e.target.value}) : ''} placeholder='Telephone'/>
             </div>
             <textarea placeholder='Adresse' value={Client.Adresse} onChange={(e)=>SetClient({...Client, Adresse:e.target.value})}></textarea>
         </div>

@@ -1,7 +1,7 @@
 .NavBar{
     position: fixed;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     user-select: none;
     top: 2%;
     width: 95%;
@@ -13,6 +13,29 @@
     -o-transform: translateX(-50%);
 }
 
-.NavBar img{
+.NavBar > img{
     height: 60px;
+}
+
+.NavBar button{
+    height: 3em;
+    width: 3em;
+    visibility: hidden;
+    background-color: var(--White);
+    border: 2px solid var(--Green);
+    border-radius: .4em;
+    -webkit-border-radius: .4em;
+    -moz-border-radius: .4em;
+    -ms-border-radius: .4em;
+    -o-border-radius: .4em;
+}
+.NavBar button > img{
+    filter: invert(58%) sepia(97%) saturate(313%) hue-rotate(110deg) brightness(96%) contrast(97%);
+    -webkit-filter: invert(58%) sepia(97%) saturate(313%) hue-rotate(110deg) brightness(96%) contrast(97%);
+}
+
+@media screen and (max-width:1115px) {
+    .NavBar button{
+        visibility: visible;
+    }
 }
