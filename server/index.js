@@ -209,4 +209,46 @@ App.delete('/produit',(req,res)=>{
     })
 });
 
+App.get('/facture/num',(req,res)=>{
+    conx.query(`
+    SELECT count(no_inv) as num
+    FROM invoice
+    Where year(Date_inv) = ?;
+    `,[new Date().getFullYear()],(err,result)=>{
+        if(err){
+            res.json({success:false,data:err})
+        }
+        res.json({success:true,data:result[0]})
+    })
+});
+App.post('/facture',(req,res)=>{
+    conx.query(`INSERT INTO Invoice VALUES (?,?,?,?,?,?,?,?)`,[
+        req.body.no_fac,
+        req.body.Date_inv,
+        Number(req.body.id_client),
+        Number(req.body.id_societe),
+        req.body.Note ? req.body.Note : `Here we can write a additional notes for the client to get a better understanding of this invoice.`,
+        req.body.Taxes,
+        req.body.Total,
+        0
+    ],async (err,result)=>{
+        if(err){
+            res.json({success:false,data:err})
+        }
+        for (let e in req.body.ProduitsCommander){
+            conx.query(`INSERT INTO Invoiceproducts VALUES (Null,?,?,?)`,[
+                req.body.ProduitsCommander[e].id_produit,
+                req.body.ProduitsCommander[e].no_inv,
+                req.body.ProduitsCommander[e].Qte
+            ],(err,result)=>{
+                if(err){
+                    console.log(err)
+                }
+                console.log(result)
+            })
+        }
+        res.json({success:true,data:result})
+    })
+});
+
 App.listen(4444);

@@ -22,6 +22,9 @@ export default function AjouterProduit() {
         Update()
     },[]);
     useEffect(()=>{
+        if (!Categorie){
+            SetProduit({...Produit,Categorie:''})
+        }
         Categories.forEach((e)=>{
             if (e.Titre === Categorie){
                 SetProduit({...Produit,Categorie:e.id_categorie})

@@ -52,3 +52,16 @@ create table InvoiceProducts(
     no_inv int references Invoice(no_inv),
     Qty int
 );
+
+
+CREATE TRIGGER trg_Prod AFTER INSERT on invoiceproducts for EACH ROW
+update produit set Stock = Stock-new.Qty WHERE id_produit = new.id_produit;
+
+
+CREATE TRIGGER trg_Prod_dlt AFTER DELETE on invoiceproducts for EACH ROW
+update produit set Stock = Stock+old.Qty WHERE id_produit = old.id_produit;
+
+
+CREATE TRIGGER trg_inv AFTER DELETE on invoice for EACH ROW
+delete FROM invoiceproducts WHERE no_inv = old.no_inv;
+

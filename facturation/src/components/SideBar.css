@@ -33,6 +33,26 @@
     width: 13em;
 }
 
+.SideBar-Quitter{
+    display: none;
+    position: fixed;
+    top: 2%;
+    right: 2%;
+    height: 2.5em;
+    width: 2.5em;
+    background-color: var(--White);
+    border: 2px solid var(--Green);
+    border-radius: .4em;
+    -webkit-border-radius: .4em;
+    -moz-border-radius: .4em;
+    -ms-border-radius: .4em;
+    -o-border-radius: .4em;
+}
+
+.SideBar-Quitter > img{
+    filter: invert(58%) sepia(97%) saturate(313%) hue-rotate(110deg) brightness(96%) contrast(97%);
+}
+
 .SideBar-Option-Selected{
     color: var(--Green);
 }
@@ -169,6 +189,7 @@
 
 @media screen and (max-width:763px) {
     .SideBar{
+        padding-top: 4%;
         width: 13em;
         left: -50%;
         border: 3px solid var(--Light-Gray);
@@ -177,5 +198,8 @@
         -moz-transform: translateX(-50%) translateY(-50%);
         -ms-transform: translateX(-50%) translateY(-50%);
         -o-transform: translateX(-50%) translateY(-50%);
-    } 
+    }
+    .SideBar-Quitter{
+        display: inline;
+    }
 }

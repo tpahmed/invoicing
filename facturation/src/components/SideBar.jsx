@@ -10,6 +10,7 @@ import Bill from '../assets/Bill.svg'
 import Add from '../assets/Add.svg'
 import List from '../assets/List.svg'
 import Gerer from '../assets/Manage.svg'
+import No from '../assets/No.svg'
 
 import './SideBar.css'
 
@@ -17,9 +18,12 @@ import './SideBar.css'
 export default function SideBar() {
   const Location = useLocation();
   const Navigator = useNavigate();
-  const {Toggle} = useContext(SideBar_Context);
+  const {Toggle,SetToggle} = useContext(SideBar_Context);
   return (
     <div className="SideBar" style={Toggle ? { left: "50%"} : null}>
+      <button className='SideBar-Quitter' onClick={()=>SetToggle(false)}>
+        <img src={No} alt="Quiter" width={'20px'} />
+      </button>
       <div className={`SideBar-Option ${Location.pathname.toLowerCase().includes('facture') ? 'SideBar-Option-Selected' : ''}`}>
         <div className='SideBar-Button' onClick={()=>Navigator('facture/gere')}>
           <img src={Bill} alt='Facturation'/>

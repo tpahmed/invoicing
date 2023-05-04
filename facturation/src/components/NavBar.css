@@ -30,8 +30,13 @@
     -o-border-radius: .4em;
 }
 .NavBar button > img{
+    transition: all .2s ease;
     filter: invert(58%) sepia(97%) saturate(313%) hue-rotate(110deg) brightness(96%) contrast(97%);
     -webkit-filter: invert(58%) sepia(97%) saturate(313%) hue-rotate(110deg) brightness(96%) contrast(97%);
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
 }
 
 @media screen and (max-width:1115px) {

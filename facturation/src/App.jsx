@@ -12,6 +12,7 @@ import ModifierProduit from './components/ModifierProduit'
 import AjouterClient from './components/AjouterClient'
 import GereCategorie from './components/GereCategorie'
 import SideBarContext from './contexts/SideBarContext'
+import CreeFacture from './components/CreeFacture'
 
 function App() {
 
@@ -32,7 +33,7 @@ function App() {
           <Route path='produit/list' element={<Container><ListerProduit/></Container>}/>
           <Route path='produit/ajouter' element={<Container><AjouterProduit/></Container>}/>
           <Route path='produit/modifier/:id' element={<Container><ModifierProduit/></Container>}/>
-          <Route path='facture/ajouter' element={<></>}/>
+          <Route path='facture/ajouter' element={<Container><CreeFacture/></Container>}/>
           <Route path='facture/gere' element={<></>}/>
           <Route path='*' element={<Navigate to={'facture/ajouter'}/>}/>
         </Routes>
